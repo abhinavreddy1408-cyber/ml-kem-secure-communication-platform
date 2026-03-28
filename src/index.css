@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-quantum-vacuum: #FDFCF8; /* Ivory background */
+  --color-background-luxury: #FDFCF8;
+  --color-cyber-void: #F5F2ED;    /* Soft beige surface */
+  --color-quantum-cyan: #C5A059;  /* Bronze-gold accent */
+  --color-accent-gold: #C5A059;
+  --color-electric-blue: #8CA4AC; /* Mist gray */
+  --color-mist-gray: #8CA4AC;
+  --color-entanglement-purple: #A08C7D; /* Soft taupe */
+  --color-taupe-luxury: #A08C7D;
+  --color-shield-green: #88A070;  /* Muted green */
+  --color-success-luxury: #88A070;
+  --color-breach-red: #D67D7D;    /* Rose-red */
+  --color-error-luxury: #D67D7D;
+  --color-text-primary: #2D2D2D;  /* Charcoal */
+  --color-text-secondary: #7A7A7A; /* Muted gray */
+  --color-border-luxury: #E5E1D8; /* Warm gray border */
+}
+
+@layer base {
+  body {
+    @apply bg-quantum-vacuum text-text-primary font-sans antialiased overflow-x-hidden;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    opacity: 0.98;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-border-luxury shadow-[0_8px_32px_rgba(0,0,0,0.03)] rounded-2xl;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+  }
+  
+  .glossy-surface {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.5) 100%);
+    box-shadow: 
+      inset 0 1px 1px rgba(255, 255, 255, 0.8),
+      0 4px 20px rgba(0, 0, 0, 0.03),
+      0 1px 3px rgba(0, 0, 0, 0.01);
+  }
+
+  .text-luxury-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-text-primary via-text-primary to-accent-gold;
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.2);
+  }
+
+  .neon-glow-red {
+    box-shadow: 0 4px 20px rgba(214, 125, 125, 0.2);
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-quantum-vacuum;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-text-primary/10 rounded-full hover:bg-text-primary/20 transition-colors;
+}
+
+/* Performance-optimized CSS animations replacing Framer Motion JS animations */
+@keyframes entropy-flicker {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@keyframes progress-fill {
+  0% { width: 15%; }
+  100% { width: 100%; }
+}
