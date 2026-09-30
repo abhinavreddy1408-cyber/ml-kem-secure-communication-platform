@@ -149,7 +149,7 @@ ml-kem-secure-communication-platform/
 
 ## 📄 License
 
-This project is for educational and demonstration purposes.
+Distributed under the [MIT License](LICENSE).
 
 ---
 
@@ -158,3 +158,10 @@ This project is for educational and demonstration purposes.
 **Built with ❤️ for Post-Quantum Cryptography Research**
 
 </div>
+
+---
+
+## 📬 Contact
+
+**Abhinav Reddy** — [@abhinavreddy1408-cyber](https://github.com/abhinavreddy1408-cyber)  
+Project Link: [https://github.com/abhinavreddy1408-cyber/ml-kem-secure-communication-platform](https://github.com/abhinavreddy1408-cyber/ml-kem-secure-communication-platform)
